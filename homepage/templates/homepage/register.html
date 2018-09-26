@@ -1,0 +1,89 @@
+<html>
+<head>
+	<title>Homepage</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+	<script
+  	src="https://code.jquery.com/jquery-2.2.4.js"
+  	integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  	crossorigin="anonymous"></script>
+
+	<script
+  	src="https://code.jquery.com/jquery-2.2.4.js"
+  	integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  	crossorigin="anonymous"></script>
+	<style type="text/css">
+	body{font-family: 'Slabo 27px', serif;}
+	h1{text-align: center;}
+	h4{text-align: center;}
+	.jumbotron{background-color: #da8ee2;padding: 0.5em 0.6em;font-size: 2em;p{font-size: 1.2em;}}
+	#bank{width: 400px;}
+	#members{width: 400px;}
+	#form{width:400px;font-size: 0px;right: 100%;text-align: left;padding-bottom: 20px;padding-top: 20px;}
+	.row{padding-top: 100px;}
+	.messages{font-size: 25px;font-family: 'Slabo 27px',serif;text-align: center;background: #88e57e;margin-bottom: 40px;}
+	.hover{background-color: steelblue;}
+	.btn{border: none;background: steelblue;transition :0.5s all;}
+	
+	</style>
+</head>
+{% load static %}
+<body background="{% static 'homepage/sangam2.jpg' %}">
+	<div class='container-fluid'>
+		<h1><span class='glyphicon glyphicon-education'></span> Prayagraj Tax Conference 1018</h1>
+		<h4><span class='glyphicon glyphicon-calendar'></span> 24 November - 25 November</h4>
+		<div class='row'>
+			{% if messages %}
+				<ul class="messages">
+    				{% for message in messages %}
+    					<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    				{% endfor %}
+				</ul>
+{% endif %}
+
+			<div class='col-md-6 col-sm-12'>
+				<div class='jumbotron' id='bank'>
+					<h2><span class='glyphicon glyphicon-usd'></span>Bank Deatils</h2>
+					<p>Indian Overseas Bank</br>Civil Lines,Allahabad</p>
+					<p>Name of Account : PRAYAGRAJ TAX</br>Conference 2018</p>
+					<p>A/C No : 035001000062798</p>
+					<p>IFSC : IOBA0000350</p>
+				</div>
+				<div class='row'>
+					<div class='col-md-12'>
+						<div class='jumbotron' id='members'>
+							<h2><span class='glyphicon glyphicon-list-alt'></span>Members</h2>
+							<p>Conference Chairman </br><strong>Sri Ajit Dhawan Advocate</strong></p>
+							<p>Conference Convenor </br><strong>Arvind Kumar Mishra</strong></p>
+							<p>AIFTP nz Chairman </br><strong>Sanjay Kumar Advocate</strong></p>
+							<p>AIFTP nz Secretary </br><strong>C.A. Jamuna Shukla</strong></p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+			<div class='col-md-6 col-sm-12'>
+				<div class='jumbotron' id='form'>
+					<form method='post' action=''>{% csrf_token %}
+						<div class='form-group'>{{form.as_p}}</div>
+						<button class='btn btn-success btn-block' type='submit'>Register</button>
+					</form>
+				</div>
+			</div>-->
+		</div>
+		
+		
+		
+	</div>
+	<!--<script type="text/javascript" src='{% static "homepage/homepage.js" %}'></script> -->
+
+</body>
+</html>
